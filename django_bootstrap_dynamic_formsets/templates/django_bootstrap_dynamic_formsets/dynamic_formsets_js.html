@@ -128,7 +128,7 @@
 
 
         // Remove form
-        $(document).on('click', '.delete-form', function () {
+        $(document).on('click', '#sortable-{{ formset.prefix }} > .delete-form', function () {
             var $parentSortItem = $(this).parents(".sort-item");
             if ($parentSortItem.hasClass('initial-form')) {
                 $parentSortItem.effect('drop');
@@ -143,7 +143,7 @@
         });
 
         // Add form
-        $(document).on('click', '.add-form', function () {
+        $(document).on('click', '#sortable-{{ formset.prefix }} > .add-form', function () {
             var formCopy = $emptyForm.clone();
             var formCopyString = formCopy.html().replace(/__prefix__/g, "" + sortItemCounter);
             formCopy.html(formCopyString);
