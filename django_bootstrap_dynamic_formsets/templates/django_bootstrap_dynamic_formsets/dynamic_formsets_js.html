@@ -42,7 +42,7 @@
         $("[id$=DELETE]").parents(".form-group").hide();
 
         //Holds an empty form
-        var $emptyForm = $('#empty-form').remove().children().unwrap();
+        var $emptyForm = $('#empty-form-{{ formset.prefix }}').remove().children().unwrap();
 
         var $sortItem = $('.sort-item');
 
@@ -94,7 +94,7 @@
         //Set up sortable jQuery UI interaction
         {% if can_order %}
 
-            var $sortable = $('#sortable');
+            var $sortable = $('#sortable-{{ formset.prefix }}');
 
             $sortable.sortable({
                 items: ".sort-item",
